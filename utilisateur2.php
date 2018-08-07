@@ -76,7 +76,7 @@ folder instead of downloading all of them to reduce the load. -->
                                                     </div>
                                                     <h4>
                                                         Support Team
-                                                        <small><i class="fa fa-clock-o"></i> 5 mins</small>
+                                                        <mdall><i class="fa fa-clock-o"></i> 5 mins</mdall>
                                                     </h4>
                                                     <p>Why not buy a new awesome theme?</p>
                                                 </a>
@@ -89,7 +89,7 @@ folder instead of downloading all of them to reduce the load. -->
                                                     </div>
                                                     <h4>
                                                         AdminLTE Design Team
-                                                        <small><i class="fa fa-clock-o"></i> 2 hours</small>
+                                                        <mdall><i class="fa fa-clock-o"></i> 2 hours</mdall>
                                                     </h4>
                                                     <p>Why not buy a new awesome theme?</p>
                                                 </a>
@@ -101,7 +101,7 @@ folder instead of downloading all of them to reduce the load. -->
                                                     </div>
                                                     <h4>
                                                         Developers
-                                                        <small><i class="fa fa-clock-o"></i> Today</small>
+                                                        <mdall><i class="fa fa-clock-o"></i> Today</mdall>
                                                     </h4>
                                                     <p>Why not buy a new awesome theme?</p>
                                                 </a>
@@ -113,7 +113,7 @@ folder instead of downloading all of them to reduce the load. -->
                                                     </div>
                                                     <h4>
                                                         Sales Department
-                                                        <small><i class="fa fa-clock-o"></i> Yesterday</small>
+                                                        <mdall><i class="fa fa-clock-o"></i> Yesterday</mdall>
                                                     </h4>
                                                     <p>Why not buy a new awesome theme?</p>
                                                 </a>
@@ -125,7 +125,7 @@ folder instead of downloading all of them to reduce the load. -->
                                                     </div>
                                                     <h4>
                                                         Reviewers
-                                                        <small><i class="fa fa-clock-o"></i> 2 days</small>
+                                                        <mdall><i class="fa fa-clock-o"></i> 2 days</mdall>
                                                     </h4>
                                                     <p>Why not buy a new awesome theme?</p>
                                                 </a>
@@ -192,7 +192,7 @@ folder instead of downloading all of them to reduce the load. -->
                                                 <a href="#">
                                                     <h3>
                                                         Design some buttons
-                                                        <small class="pull-right">20%</small>
+                                                        <mdall class="pull-right">20%</mdall>
                                                     </h3>
                                                     <div class="progress xs">
                                                         <div class="progress-bar progress-bar-aqua" style="width: 20%" role="progressbar"
@@ -207,7 +207,7 @@ folder instead of downloading all of them to reduce the load. -->
                                                 <a href="#">
                                                     <h3>
                                                         Create a nice theme
-                                                        <small class="pull-right">40%</small>
+                                                        <mdall class="pull-right">40%</mdall>
                                                     </h3>
                                                     <div class="progress xs">
                                                         <div class="progress-bar progress-bar-green" style="width: 40%" role="progressbar"
@@ -222,7 +222,7 @@ folder instead of downloading all of them to reduce the load. -->
                                                 <a href="#">
                                                     <h3>
                                                         Some task I need to do
-                                                        <small class="pull-right">60%</small>
+                                                        <mdall class="pull-right">60%</mdall>
                                                     </h3>
                                                     <div class="progress xs">
                                                         <div class="progress-bar progress-bar-red" style="width: 60%" role="progressbar"
@@ -237,7 +237,7 @@ folder instead of downloading all of them to reduce the load. -->
                                                 <a href="#">
                                                     <h3>
                                                         Make beautiful transitions
-                                                        <small class="pull-right">80%</small>
+                                                        <mdall class="pull-right">80%</mdall>
                                                     </h3>
                                                     <div class="progress xs">
                                                         <div class="progress-bar progress-bar-yellow" style="width: 80%" role="progressbar"
@@ -268,7 +268,7 @@ folder instead of downloading all of them to reduce the load. -->
 
                                         <p>
                                             Alexander Pierce - Web Developer
-                                            <small>Member since Nov. 2012</small>
+                                            <mdall>Member since Nov. 2012</mdall>
                                         </p>
                                     </li>
                                     <!-- Menu Body -->
@@ -344,7 +344,7 @@ folder instead of downloading all of them to reduce the load. -->
                 <section class="content-header">
                     <h1>
                         Dashboard
-                        <small>Control panel</small>
+                        <mdall>Control panel</mdall>
                     </h1>
                     <ol class="breadcrumb">
                         <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
@@ -359,79 +359,85 @@ folder instead of downloading all of them to reduce the load. -->
 
                     function affiche_form($nom = '', $prenom = '', $login = '',$mdp = '', $date_naissance = '',$tel = '', $email = '', $role = '' , $admin = '', $moderateur ='', $verif = false){
                     ?>
-                    <form action="utilisateur2.php" method="post">
 
-                        <div class="container">
-                            <div class="row">
 
-                                <div class="col-12 text-center">
-                                    <h2> Création </h2>
-                                </div>
-                                <div class="col-12 col-md-3 mt-5">
-                                    <label for="idn"> Nom : </label>
-                                </div>
-                                <div class="col-12 col-md-9 mt-5">
-                                    <input type="text" name="nom" id="idn" placeholder="Nom" required value="<?= $nom ?>"><?=  etoile_rouge($nom, $verif) ?>
-                                </div>
-                                <div class="col-12 col-md-3">
-                                    <label for="idp"> Prenom : </label>
-                                </div>
-                                <div class="col-12 col-md-9">
-                                    <input type="text" name="prenom" id="idp" placeholder="Prenom" required value="<?= $prenom ?>"><?=  etoile_rouge($prenom, $verif) ?>
-                                </div>
-                                <div class="col-12 col-md-3">
-                                    <label for="idl"> Login : </label>
-                                </div>
-                                <div class="col-12 col-md-9">
-                                    <input type="text" name="login" id="idl" placeholder="login" required value="<?= $login ?>"><?=  etoile_rouge($login, $verif) ?>
-                                </div>
-                                <div class="col-12 col-md-3">
-                                    <label for="idm"> Mot de passe : </label>
-                                </div>
-                                <div class="col-12 col-md-9">
-                                    <input type="text" name="mdp" id="idmdp" placeholder="mdp" required value="<?= $mdp ?>"><?=  etoile_rouge($mdp, $verif) ?>
-                                </div>
-                                <div class="col-12 col-md-3">
-                                    <label for="iddn"> Date naissance : </label>
-                                </div>
-                                <div class="col-12 col-md-9">
-                                    <input type="text" name="date_naissance" id="iddn" placeholder="date naissance" required value="<?= $date_naissance ?>"><?=  etoile_rouge($date_naissance, $verif) ?>
-                                </div>
-                                <div class="col-12 col-md-3">
-                                    <label for="idt"> Tel : </label>
-                                </div>
-                                <div class="col-12 col-md-9">
-                                    <input type="text" name="tel" id="idt" placeholder="tel" required value="<?= $tel ?>"><?=  etoile_rouge($tel, $verif) ?>
-                                </div>
-                                <div class="col-12 col-md-3">
-                                    <label for="ide"> Email : </label>
-                                </div>
-                                <div class="col-12 col-md-9">
-                                    <input type="email" name="email" id="ide" placeholder="email" required value="<?= $email ?>"><?=  etoile_rouge($email, $verif) ?>
-                                </div>
-                                <div class="col-12 col-md-3">
-                                    <label for="idr"> Role : </label>
-                                </div>
-                                <div class="col-12 col-md-9 ">
-                                    <select name="role" id="idr">
-                                        <option value="1"> Admin </option>
-                                        <option value="2"> Moderateur </option>                   
-                                    </select><?=  etoile_rouge($admin, $moderateur, $verif) ?>
-                                </div>
+                    <div class="box box-success">
+                        <div class="row">
+                            <form action="utilisateur2.php" method="post" class="form-horizontal">
+                                <div class="box-body text-center">
 
-                                <div class="col-12">
-                                    <button class="btn btn-success pt-3" type="submit" name="envoyer" value="Envoyer"> Créer </button>
+                                    <div class="col-lg-12" class="box-header with-border">
+                                        <h2 class="box-title"> Création </h2>
+                                    </div>
+                                    <div class="col-lg-2  form-group">
+                                        <label class="control-label" for="idn"> Nom : </label>
+                                    </div>
+                                    <div class="col-lg-10">
+                                        <input class="form-control " type="text" name="nom" id="idn" placeholder="Nom" required value="<?= $nom ?>"><?=  etoile_rouge($nom, $verif) ?>
+                                    </div>
+                                    <div class="col-lg-2 form-group">
+                                        <label class="control-label" for="idp"> Prenom : </label>
+                                    </div>
+                                    <div class="col-lg-10 ">
+                                        <input class="form-control" type="text" name="prenom" id="idp" placeholder="Prenom" required value="<?= $prenom ?>"><?=  etoile_rouge($prenom, $verif) ?>
+                                    </div>
+                                    <div class="col-lg-2  form-group">
+                                        <label class="control-label" for="idl"> Login : </label>
+                                    </div>
+                                    <div class="col-lg-10 ">
+                                        <input class="form-control" type="text" name="login" id="idl" placeholder="login" required value="<?= $login ?>"><?=  etoile_rouge($login, $verif) ?>
+                                    </div>
+                                    <div class="col-lg-2  form-group">
+                                        <label class="control-label" for="idm"> Mot de passe : </label>
+                                    </div>
+                                    <div class="col-lg-10 ">
+                                        <input class="form-control" type="password" name="mdp" id="idmdp" placeholder="mdp" required value="<?= $mdp ?>"><?=  etoile_rouge($mdp, $verif) ?>
+                                    </div>
+                                    <div class="col-lg-2  form-group">
+                                        <label class="control-label" for="iddn"> Date naissance : </label>
+                                    </div>
+                                    <div class="col-lg-10 ">
+                                        <input class="form-control" type="date" name="date_naissance" id="iddn" placeholder="date naissance" required value="<?= $date_naissance ?>"><?=  etoile_rouge($date_naissance, $verif) ?>
+                                    </div>
+                                    <div class="col-lg-2  form-group">
+                                        <label class="control-label" for="idt"> Tel : </label>
+                                    </div>
+                                    <div class="col-lg-10 ">
+                                        <input class="form-control" type="tel" name="tel" id="idt" placeholder="tel" required value="<?= $tel ?>"><?=  etoile_rouge($tel, $verif) ?>
+                                    </div>
+                                    <div class="col-lg-2 form-group">
+                                        <label class="control-label" for="ide"> Email : </label>
+                                    </div>
+                                    <div class="col-lg-10 ">
+                                        <input class="form-control" type="email" name="email" id="ide" placeholder="email" required value="<?= $email ?>"><?=  etoile_rouge($email, $verif) ?>
+                                    </div>
+                                    <div class="col-lg-2  form-group">
+                                        <label class="control-label" for="idr"> Role : </label>
+                                    </div>
+                                    <div class="col-lg-10  ">
+                                        <select class="form-control" name="role" id="idr">
+                                            <option value="1"> Admin </option>
+                                            <option value="2"> Moderateur </option>                   
+                                        </select><?=  etoile_rouge($admin, $moderateur, $verif) ?>
+                                    </div>
+
+                                    <div class="col-md-12">
+                                        <a href="utilisateur2.php"><button class="btn btn-info" type="submit" name="retour" value="retour"> Retour </button></a>
+                                        <button class="btn btn-success" type="submit" name="envoyer" value="Envoyer"> Créer </button>
+
+                                    </div>
                                 </div>
-                            </div>
+                            </form>
                         </div>
-                    </form>
+                    </div>
+
                     <?php                                                                 
                     }
                     ?>    
                     <?php
                     function etoile_rouge($champ, $verif = false)
                     { 
-                        if(empty($champ) && ($verif /* == true */))
+                        if(empty($champ) && ($verif  == true ))
                         {
                             echo'<span class="rouge">*</span>';
                         }
@@ -448,20 +454,21 @@ folder instead of downloading all of them to reduce the load. -->
                     if(isset($_POST['envoyer']))
                     {
                         //echo 'test';
-                        
+
                         $n = strtoupper(trim($_POST['nom']));// strtoupper : majuscule du nom
                         $p = ucfirst(trim($_POST['prenom']));// trim enleve les espaces avant et apres le nom// ucfirst: premire lettre en maj
                         $l = trim($_POST['login']); 
                         $m = trim($_POST['mdp']); 
                         $dn = trim($_POST['date_naissance']); 
+                        //echo $dn;                        
                         $t = trim($_POST['tel']); 
                         $e = trim($_POST['email']); 
                         $r = trim($_POST['role']); 
-                    
+
                         /*echo "Nom : $n <br>";
                         echo "prenom : $p <br>";
                         echo "login : $l <br>";*/
-                        
+
                         if(empty($n) || empty($p) || empty($l)|| empty($m) || empty($dn) || empty($t) || empty($e) || empty($r)) //empty remplace le == ''
                         {
                             //echo 'pd';
@@ -505,9 +512,9 @@ folder instead of downloading all of them to reduce the load. -->
                         { 
                             //Connexion à la base de données
                             include 'connexion.php';
-                            
+
                             //echo 'ca va requeter';
-                            
+
                             $requete = $pdo->prepare("insert into utilisateur(nom, prenom, email, tel, login, mdp, date_anniv, id_role) values(:nom, :prenom, :email, :tel, :login, :mdp, :date_anniv, :role)");
 
                             $requete->bindValue(':nom', $n);
@@ -521,7 +528,12 @@ folder instead of downloading all of them to reduce the load. -->
 
                             //On exécute la requête
                             $requete->execute(); 
+                    ?>
 
+                    <div>
+                        <h1> Création ok !</h1>
+                    </div>
+                    <?php
                         }
                     }
                     else
