@@ -147,7 +147,9 @@ function afficheCat()
                             <td><?php echo $ligne_tab['nom'] ?></td>
                             <td><?php echo $ligne_tab['description'] ?></td>
                             <td><?php echo $ligne_tab['parent'] ?></td>
-                            <th><a href="categorie_page.php?id_categorie=<?= $ligne_tab['id_categorie']?>"><button type='button' class='btn btn-warning btn-xs' name='modif'>Modifier</button></a> <button type='button' class='btn btn-danger btn-xs'name='supprimer'>Supprimer</button></th>
+                            <th><a href="categorie_page.php?id_categorie=<?= $ligne_tab['id_categorie']?>">
+                            <button type='button' class='btn btn-warning btn-xs' name='modif'>Modifier</button>
+                            </a> <button type='button' class='btn btn-danger btn-xs'name='supprimer'>Supprimer</button></th>
                         </tr>
                 <?php
                     }

@@ -14,7 +14,7 @@
                 <div class="col-12">
                     <h1 class="titre  text-center"> A'BURGER'TICLE</h1>
                 </div>
-                
+
                 <div class="col-12">
                     <img class="w-100" src="images/hja8FO0.png" alt="trait">
                 </div>
@@ -22,65 +22,53 @@
         </div>
 
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
+           
             <a class="navbar-brand" href="#"><img class="w-25" src="images/burger.png" alt=""></a>
+            
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
 
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mr-auto">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-                    </li>
-                    
-                 
-                    
-                    
-                    
-                    
-                    <li class="nav-item ml-5">
-                        <a class="nav-link" href="#">Catégorie 1 </a>
-                    </li>
-                    <li class="nav-item ml-5">
-                        <a class="nav-link" href="#">catégorie 2</a>
-                    </li>
-                    <li class="nav-item ml-5">
-                        <a class="nav-link" href="#">catégorie 3</a>
-                    </li>
-                    <li class="nav-item ml-5">
-                        <a class="nav-link" href="#">catégorie 4</a>
-                    </li>
-                    <li class="nav-item ml-5">
-                        <a class="nav-link" href="#">catégorie 5</a>
-                    </li>
-                    <li class="nav-item ml-5">
-                        <a class="nav-link" href="#">catégorie 6</a>
-                    </li>                                   
 
-                    <li class="nav-item dropdown ml-5">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Dropdown
-                        </a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="#">IFPA</a>
-                            <a class="dropdown-item" href="#">AFIB</a>
-                            <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="#">DL03</a>
-                        </div>
+
+                    <?php 
+                    require 'connexion.php';
+                    $requete = $pdo->prepare('select nom from categorie');
+                    $requete->execute();
+                    while($ligne_tab = $requete->fetch())
+                    {
+
+                    ?>
+                    <li class="nav-item ">
+                        <a class="nav-link ml-5" href="#"><?= $ligne_tab['nom']?></a>
                     </li>
+
+                    <?php
+                    }
+                    ?>
 
                 </ul>
-                <form action="connexion.php" class="form-inline my-2 my-lg-0">
-                    <button class="btn btn-outline-info my-2 my-sm-0 mr-3" type="submit">connexion</button>
+                <form action="" class="form-inline my-2 my-lg-0">
+                    <a href="./Connexion_Toby&Nono/formConnexion.php"><button class="btn btn-outline-info my-2 my-sm-0 mr-3" type="button">connexion</button></a>
+                    <a href="./Connexion_Toby&Nono/formConnexion.php"><button class="btn btn-outline-info my-2 my-sm-0 mr-3" type="button">Admin</button></a>
                     <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
                     <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
                 </form>
             </div>
         </nav>
 
-        <div class="slide">
-            <img src="images/2018-08-07_11-21-37.png" alt="slide">            
+        <?php 
+
+        $requete = $pdo->prepare("select lien from galerie where photo = 'banniere' ");     
+        $requete->execute();        
+        $photo_tab = $requete->fetch();      
+        ?>
+        <div class="">
+            <img class="w-100" src="<?=($photo_tab['lien'])?>" alt="slide">            
         </div>
+
 
         <div class="container-fluid">
             <div class="row ">
@@ -96,70 +84,33 @@
                     </div>
 
                     <div class="row mb-5">
-                        <div class="col-4">
+
+                        <?php                         
+    $requete = $pdo->prepare('select titre, contenu,photo from article');
+                 $requete->execute();
+                 while($ligne_tab = $requete->fetch())
+                 {
+
+                        ?>
+
+                        <div class="col-12 col-md-4 mt-5">
                             <div class="card" style="width: 18rem;">
-                                <img class="card-img-top" src="images/desk.png" alt="Card image cap">
+                                <img class="card-img-top" src="<?=('./images/'. $ligne_tab['photo'])?>" alt="Card image cap">
                                 <div class="card-body">
-                                    <h5 class="card-title"> Titre Article Populaire </h5>
-                                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                    <a href="#" class="btn btn-primary">LIRE</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-4">
-                            <div class="card" style="width: 18rem;">
-                                <img class="card-img-top" src="images/desk.png" alt="Card image cap">
-                                <div class="card-body">
-                                    <h5 class="card-title"> Titre Article Populaire </h5>
-                                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                    <a href="#" class="btn btn-primary">LIRE</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-4">
-                            <div class="card" style="width: 18rem;">
-                                <img class="card-img-top" src="images/doll.png" alt="Card image cap">
-                                <div class="card-body">
-                                    <h5 class="card-title"> Titre Article Populaire </h5>
-                                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                    <a href="#" class="btn btn-primary">LIRE</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-4 mt-5">
-                            <div class="card" style="width: 18rem;">
-                                <img class="card-img-top" src="images/mccirculaire.png" alt="Card image cap">
-                                <div class="card-body">
-                                    <h5 class="card-title"> Titre Article Populaire </h5>
-                                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                    <a href="#" class="btn btn-primary">LIRE</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-4 mt-5">
-                            <div class="card" style="width: 18rem;">
-                                <img class="card-img-top" src="images/lamasticot.png" alt="Card image cap">
-                                <div class="card-body">
-                                    <h5 class="card-title"> Titre Article Populaire </h5>
-                                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                    <a href="#" class="btn btn-primary">LIRE</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-4 mt-5">
-                            <div class="card" style="width: 18rem;">
-                                <img class="card-img-top" src="images/undefinedvariable.png" alt="Card image cap">
-                                <div class="card-body">
-                                    <h5 class="card-title"> Titre Article Populaire </h5>
-                                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                    <h5 class="card-title"><?= $ligne_tab['titre']?> </h5>
+                                    <p class="card-text"><?= $ligne_tab['contenu']?></p>
                                     <a href="#" class="btn btn-primary">LIRE</a>
                                 </div>
                             </div>
                         </div>
 
+                        <?php
+                 }
+                        ?>
+
                     </div>
                 </div>
-                <div class="col-3 four section2 mt-5 mb-5">
+                <div class="col-12 col-md-3 four section2 mt-5 mb-5">
                     <h2 class=" text-center"> les burgers viennent de sortir du four</h2><br/>
 
                     <h4> phrase accroche dernier art</h4>
@@ -206,21 +157,21 @@
             </div>
             <div class="row section3">
 
-                <div class="col-3">
+                <div class="col-12 col-md-3">
                     <img class="" src="images/3mf66vvr.png" alt="femme">
                 </div>
-                <div class="col-3">
+                <div class="col-12 col-md-3">
                     <img src="images/a2lgcmcz.png" alt="femme">
                 </div>
-                <div class="col-3">
+                <div class="col-12 col-md-3">
                     <img src="images/awtf2nh2.png" alt="femme">
                 </div>
-                <div class="col-3"> 
+                <div class="col-12 col-md-3"> 
                     <img src="images/38x8qj1i.png" alt="femme">
                 </div>
             </div>
 
-            <div class=" row footer mt-5">
+            <div class=" row footer ">
                 <div class="col-12">
                     <ul class="d-flex  justify-content-around">
                         <a href="#"><li>Home</li></a>

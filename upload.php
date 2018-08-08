@@ -53,7 +53,7 @@ if ($uploadOk == 0) {
 if($uploadOk == 1)
 {
 
-    require_once 'connexion2.php';
+    require_once 'connexion.php';
     //            ajouterImage($image, $pos, $lien);
 
     $image = $_POST['titre'];
