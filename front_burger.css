@@ -1,0 +1,33 @@
+body{
+    background-color: #b2bac1
+}
+.section1{
+    background-color: cadetblue;
+}
+.section2{
+    background: url(images/YdKIfXy.png) repeat-y center left;
+    
+}
+.section3{
+    background-color: #0b3864;
+}
+.four{
+    background-color: #fff;
+}
+.footer{
+    background-color: #4e8b73
+}
+.footer a{
+    text-decoration: none;
+    list-style: none; 
+    color: #000;
+    font-weight: bolder;
+    padding: 10px;
+}
+.moment1{
+    background-color: #0b3864;
+}
+.moment2{
+    background-color: #587046;    
+    color: #fff;
+}

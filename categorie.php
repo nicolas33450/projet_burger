@@ -84,7 +84,7 @@ function affichForm2($nom='',$descr='',$parent='')
             <!-- text input -->
                 <div class="form-group">
                     <label>Nom : </label>
-                    <input type="text" class="form-control" value=<?php $nom ?> id="nom">
+                    <input type="text" class="form-control" value=<?php $nom ?> id= "nom" >
                 </div>
                 <div class="form-group">
                 <label>Description : </label>

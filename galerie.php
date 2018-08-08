@@ -1,4 +1,4 @@
-<?php 
+    <?php 
 
 
 function ajouterImage($image = '', $pos = '', $lien = '')
