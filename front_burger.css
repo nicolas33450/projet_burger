@@ -1,5 +1,5 @@
 body{
-    background-color: #bdc5cc;
+    background-color: #fff;
 }
 .section1{
     background-color: cadetblue;
@@ -31,4 +31,9 @@ body{
 .moment2{
     background-color: #587046;    
     color: #fff;
+}
+.pw a{
+    color: #fff;
+    text-decoration: none;
+    list-style: none;    
 }

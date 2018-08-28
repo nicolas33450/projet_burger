@@ -22,37 +22,54 @@
         </div>
 
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
-           
-            <a class="navbar-brand" href="#"><img class="w-25" src="images/burger.png" alt=""></a>
-            
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
+
+            <a class="navbar-brand" ><img class="w-25" src="images/burger.png" alt=""></a>
 
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mr-auto">
 
-
                     <?php 
                     require 'connexion.php';
-                    $requete = $pdo->prepare('select nom from categorie');
+                    $requete = $pdo->prepare('select nom, id_categorie from categorie where parent is null');
                     $requete->execute();
                     while($ligne_tab = $requete->fetch())
                     {
 
                     ?>
-                    <li class="nav-item ">
-                        <a class="nav-link ml-5" href="#"><?= $ligne_tab['nom']?></a>
-                    </li>
+                    <li class="dropdown ">
+                        <a class="nav-link dropdown-toggle ml-5" href="#" id="navbarDropdown"  data-toggle="dropdown"><?= $ligne_tab['nom']?></a>
+                        <div class="dropdown-menu" >
+                            <?php
 
+                            ?>
+
+                            <?php                    
+                        $requete2 = $pdo->prepare('select nom, id_categorie from categorie where parent = :id_cat');
+                        $requete2->bindValue(':id_cat',$ligne_tab['id_categorie']);
+                        $requete2->execute();                   
+
+                        while($ligne_tab2 = $requete2->fetch())
+                        {
+                            ?>
+
+                            <a class="dropdown-item" href="affiche_article.php?&id=<?= $ligne_tab2['id_categorie']?>"><?= $ligne_tab2['nom']?></a>
+
+                            <?php
+                        }
+                            ?>
+                        </div>
+                    </li>
                     <?php
+
                     }
-                    ?>
+                    ?>    
+
 
                 </ul>
                 <form action="" class="form-inline my-2 my-lg-0">
-                    <a href="./Connexion_Toby&Nono/formConnexion.php"><button class="btn btn-outline-info my-2 my-sm-0 mr-3" type="button">connexion</button></a>
-                    <a href="./Connexion_Toby&Nono/formConnexion.php"><button class="btn btn-outline-info my-2 my-sm-0 mr-3" type="button">Admin</button></a>
+                    <a href="./Connexion_Toby&Nono/formConnexion.php">
+                        <button class="btn btn-outline-info my-2 my-sm-0 mr-3" type="button">connexion</button></a>
+
                     <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
                     <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
                 </form>
@@ -93,7 +110,7 @@
 
                         ?>
 
-                        <div class="col-12 col-md-4 mt-5">
+                        <div class="col-12 col-md-4 mt-5 pl-5">
                             <div class="card" style="width: 18rem;">
                                 <img class="card-img-top" src="<?=('./images/'. $ligne_tab['photo'])?>" alt="Card image cap">
                                 <div class="card-body">
